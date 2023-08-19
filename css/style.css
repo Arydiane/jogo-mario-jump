@@ -6,6 +6,7 @@
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -27,7 +28,11 @@ main {
 .pipe {
     position: absolute;
     bottom: 0;
+    right: -80px;
     width: 80px;
+}
+
+.move {
     animation: pipe-animation 1.5s infinite linear;
 }
 
@@ -48,21 +53,25 @@ main {
     animation: clouds-animation 20s infinite linear;
 }
 
-.container-msg {
-    display: none;
+.centralize {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    animation: msg-animation 1.5s 0.5s both;
     z-index: 99;
 }
 
-.msg {
-    font-size: 3rem;
+.container-msg-game-over {
+    display: none;
+    animation: msg-animation 1.5s 0.5s both;
+}
+
+.msg,
+.msg-initial {
+    font-size: 2rem;
     text-shadow: 1px 1px 6px black;
-    color: rgb(243, 14, 14);
+    color: rgb(208, 14, 14);
     padding-bottom: 1rem;
 }
 

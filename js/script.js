@@ -1,7 +1,10 @@
-const containerMsg = document.querySelector('.container-msg')
-const btnRestart = document.querySelector('.btn')
+const msgInitial = document.querySelector('.msg-initial');
+const containerMsgGameOver = document.querySelector('.container-msg-game-over');
+const btnRestart = document.querySelector('.btn');
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
+
+let startGame = true;
 
 const jump = () => {
     mario.classList.add('jump');
@@ -24,13 +27,22 @@ const loop = setInterval(() => {
         mario.style.width = '75px';
         mario.style.marginLeft = '50px';
 
-        containerMsg.style.display = 'block';
+        containerMsgGameOver.style.display = 'block';
         clearInterval(loop);
     }
 }, 10)
 
-btnRestart.addEventListener('click', () => {
-    window.location.reload()
-})
+btnRestart.addEventListener('click', () => {  
+    window.location.reload();
+});
 
-document.addEventListener('keydown', jump);
+document.addEventListener('keydown', () => {
+
+    if (startGame) {
+        msgInitial.style.display = 'none'; 
+        pipe.classList.add('move');
+        startGame = false; 
+    }
+
+    jump();
+});
