@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Desenvolvido por Arydiane Jardim" >
+    <meta name="author" content="Desenvolvido por Arydiane Jardim">
     <meta name="description" content="Jogo Mario Jump">
-    <link rel="stylesheet" href="./css/style.css" > 
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+
     <title>Mario Jump</title>
 </head>
 <body>
-    <div class="game-board">
-        <img src="./images/mario.gif" class="mario" alt="Mario">
-        <img src="./images/pipe.png" class="pipe" alt="Pipe">
-    </div>
+    <main>
+        <div class="game-board">
+            <div class="container-msg">
+                <h1 class="msg">Game Over</h1>
+                <button class="btn">Restart</button>
+            </div>
+            <img src="./images/clouds.png" class="clouds" alt="Nuvens">
+            <img src="./images/mario.gif" class="mario" alt="Mario">
+            <img src="./images/pipe.png" class="pipe" alt="Cano">
+        </div>
+    </main>
     <script src="./js/script.js" type="module"></script>
 </body>
 </html>

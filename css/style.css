@@ -4,10 +4,21 @@
     box-sizing: border-box;
 }
 
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(59, 59, 59);
+    font-family: 'Press Start 2P', cursive;
+}
+
 .game-board {
     width: 80%;
     height: 500px;
-    border: 1px solid #333;
+    border-bottom: 15px solid rgb(35, 168, 35);
+    background: linear-gradient(#87CEEB, #E0F6FF);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -28,6 +39,45 @@
 
 .jump {
     animation: jump 500ms ease-out;
+}
+
+.clouds {
+    width: 550px;
+    position: absolute;
+    top: 3%;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.container-msg {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    animation: msg-animation 1.5s 0.5s both;
+    z-index: 99;
+}
+
+.msg {
+    font-size: 3rem;
+    text-shadow: 1px 1px 6px black;
+    color: rgb(243, 14, 14);
+    padding-bottom: 1rem;
+}
+
+.btn {
+    font-size: 1rem;
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 1rem;
+    font-family: inherit;
+    background-color: rgb(201, 203, 205);
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 3px 3px black;
 }
 
 @keyframes pipe-animation {
@@ -53,5 +103,25 @@
 
     100% {
         bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes msg-animation {
+    from {
+        top: -100px;
+    }
+
+    to {
+        top: 50%;
     }
 }
