@@ -47,10 +47,18 @@ main {
 }
 
 .clouds {
-    width: 550px;
+    width: 500px;
     position: absolute;
-    top: 3%;
+    top: 5%;
     animation: clouds-animation 20s infinite linear;
+}
+
+.msg-score {
+    display: none;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    text-shadow: 1px 1px 1px white;
 }
 
 .centralize {
