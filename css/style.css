@@ -23,6 +23,7 @@ main {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    box-shadow: 8px 8px black;
 }
 
 .pipe {
@@ -95,6 +96,12 @@ main {
 .btn:hover {
     cursor: pointer;
     box-shadow: 3px 3px black;
+}
+
+.author {
+    font-size: 0.5rem;
+    padding-top: 1rem;
+    color: rgb(32, 32, 32);
 }
 
 @keyframes pipe-animation {
