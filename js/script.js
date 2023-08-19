@@ -4,9 +4,24 @@ const btnRestart = document.querySelector('.btn');
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const msgScore = document.querySelector('.msg-score');
+const audioGameOver = document.querySelector('#audio-game-over');
+const audioInitial = document.querySelector('#audio-initial');
 
 let startGame = true;
 let countScore = 0;
+let audioAtual = audioInitial;
+
+const playSound = (audio) => {
+    if (audio != null && audio.localName === 'audio') {
+        if (audioAtual != null) {
+            audioAtual.pause();
+        }
+        audio.play();
+        audioAtual = audio;
+    } else {
+        console.log('Audio não encontrado ou inválido');
+    }
+}
 
 const jump = () => {
     mario.classList.add('jump');
@@ -21,7 +36,9 @@ const loop = setInterval(() => {
 
     if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
 
-        clearInterval(score)
+        playSound(audioGameOver);
+        clearInterval(score);
+
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
 
@@ -54,6 +71,7 @@ document.addEventListener('keydown', () => {
         msgScore.style.display = 'block';
         pipe.classList.add('move');
         startGame = false;
+        audioAtual.pause();
     }
 
     jump();
