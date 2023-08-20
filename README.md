@@ -27,5 +27,5 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 🛠️ Como Executar o Projeto
 
-Para jogar, basta clicar aqui e desfrutar da experiência!
+Para jogar, basta [clicar aqui](https://jogo-mario-jump-liart.vercel.app/) e desfrutar da experiência!
 Divirta-se!
